@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `bd-sistema`.`persona` (
   PRIMARY KEY (`idPersona`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 3
-DEFAULT CHARACTER SET = latin1;
+DEFAULT CHARACTER SET = utf8mb4;
 
 
 -- -----------------------------------------------------
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `bd-sistema`.`cliente` (
     FOREIGN KEY (`idCliente`)
     REFERENCES `bd-sistema`.`persona` (`idPersona`))
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = latin1;
+DEFAULT CHARACTER SET = utf8mb4;
 
 
 -- -----------------------------------------------------
@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `bd-sistema`.`empleado` (
     FOREIGN KEY (`idEmpleado`)
     REFERENCES `bd-sistema`.`persona` (`idPersona`))
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = latin1;
+DEFAULT CHARACTER SET = utf8mb4;
 
 
 -- -----------------------------------------------------

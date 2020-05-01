@@ -1,4 +1,4 @@
-package com.example.TPCGrupo18.entitys;
+package com.unla.Grupo18.entities;
 
 import java.time.LocalDate;
 

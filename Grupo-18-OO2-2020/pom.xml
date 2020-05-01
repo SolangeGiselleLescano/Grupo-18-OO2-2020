@@ -8,10 +8,10 @@
 		<version>2.2.6.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
-	<artifactId>Grupo-18-OO2-2020</artifactId>
+	<groupId>com.unla</groupId>
+	<artifactId>Grupo18</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Grupo-18-OO2-2020</name>
+	<name>Grupo18</name>
 	<description>Trabajo practico grupal</description>
 
 	<properties>
@@ -54,6 +54,13 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<dependencies>
+			        <dependency>
+			            <groupId>org.springframework</groupId>
+			            <artifactId>springloaded</artifactId>
+			            <version>1.2.8.RELEASE</version>
+			        </dependency>
+			    </dependencies>
 			</plugin>
 		</plugins>
 	</build>

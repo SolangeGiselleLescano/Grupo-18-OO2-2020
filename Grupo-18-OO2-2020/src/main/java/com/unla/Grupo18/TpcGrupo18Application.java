@@ -1,4 +1,4 @@
-package com.example.TPCGrupo18;
+package com.unla.Grupo18;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

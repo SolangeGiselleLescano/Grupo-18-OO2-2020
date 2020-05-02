@@ -10,12 +10,12 @@ import org.springframework.stereotype.Repository;
 import com.unla.Grupo18.entities.Producto;
 
 
-@Repository("personRepository")
+@Repository("productoRepository")
 public interface IProductoRepository extends JpaRepository<Producto, Serializable> {
 	
-	public abstract Producto findById(int id);
+	public Producto findByIdProducto(int idProducto);
 	
-	public abstract Producto findByName(String name);
+	public Producto findByDescripcion(String descripcion);
 	
 
 }

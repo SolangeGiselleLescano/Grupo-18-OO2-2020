@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>Alta de Producto</title>
+</head>
+<body>
+<div class="container">
+    <h2>Producto detalle</h2>
+    <div>
+        <form class="form-horizontal" th:object="${producto}" th:action="@{/producto/create}" method="get">
+                         
+                
+           
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Descripcion:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{descripcion}"/>
+                                   <input type="hidden" readonly class="form-control" th:field="*{idProducto}"/>
+     
+                </div>
+            </div>
+                        <div class="form-group">
+                <label class="col-sm-2 control-label">Precio Unitario:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{precioUnitario}"/>
+                </div>
+            </div>
+                        
+            <div class="row">
+                <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

@@ -10,9 +10,9 @@ public class ViewRouteHelper {
 	
 	//producto
 	public final static String PRODUCTO_INDEX = "producto/index";
-	public final static String PRODUCTO_NEW = "producto/new";
+	public final static String PRODUCTO_NEW = "producto/AltaProducto";
 	public final static String PRODUCTO_UPDATE = "producto/update";
 	public final static String PRODUCTO_ROOT = "/producto";
-	
+	public final static String PRODUCTO_INFO = "producto/infoProducto";	
 
 }

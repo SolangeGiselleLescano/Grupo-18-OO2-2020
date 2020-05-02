@@ -5,7 +5,7 @@ import java.time.LocalDate;
 public class ProductoModel {
 	
 	private int id_Producto;
-	private int cantidadActual;
+	
 	private String descripcion;
 	private LocalDate fechaAlta;
 	private float precioUnitario;
@@ -15,11 +15,11 @@ public class ProductoModel {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ProductoModel(int id_Producto, int cantidadActual, String descripcion, LocalDate fechaAlta,
+	public ProductoModel(int id_Producto, String descripcion, LocalDate fechaAlta,
 			float precioUnitario) {
 		super();
 		this.id_Producto = id_Producto;
-		this.cantidadActual = cantidadActual;
+		
 		this.descripcion = descripcion;
 		this.fechaAlta = fechaAlta;
 		this.precioUnitario = precioUnitario;
@@ -33,13 +33,7 @@ public class ProductoModel {
 		this.id_Producto = id_Producto;
 	}
 
-	public int getCantidadActual() {
-		return cantidadActual;
-	}
-
-	public void setCantidadActual(int cantidadActual) {
-		this.cantidadActual = cantidadActual;
-	}
+	
 
 	public String getDescripcion() {
 		return descripcion;

@@ -9,10 +9,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
+
+
 
 @Entity
 @Table(name="lote")
@@ -33,8 +36,9 @@ public class Lote {
 	@CreationTimestamp
 	private LocalDate fechaDeIngreso;
 	
-	@OneToOne(fetch = FetchType.LAZY)
-	// normalmente nullable es igual a false, en este caso se deja como true porque el ejemplo es simple
+	
+	
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="idProducto", nullable=true)
 	private Producto producto;
 	

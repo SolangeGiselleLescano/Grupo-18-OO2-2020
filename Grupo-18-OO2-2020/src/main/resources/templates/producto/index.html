@@ -3,15 +3,23 @@
 		<tr>
 			<th>Name</th>
 			<th>View</th>
+			<th>Delete</th>
+			<th>Update</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr th:each="producto : ${productos}">
-			<td><span th:text="${producto.nombre}" /></td>
+			<td><span th:text="${producto.descripcion}" /></td>
 			<td>
 				<a th:href="@{/producto/{idProducto}(idProducto=${producto.idProducto})}">View</a>
+			</td>
+						<td>
+				<a th:href="@{/producto/delete/{idProducto}(idProducto=${producto.idProducto})}">Eliminar</a>
+			</td>
+			<td>
+				<a th:href="@{/producto/update/{idProducto}(idProducto=${producto.idProducto})}">Update</a>
 			</td>
 		</tr>
 	</tbody>
 </table>
-<a href="/person/new">Create new person</a>
+<a href="/producto/new">Crear nuevo producto</a>

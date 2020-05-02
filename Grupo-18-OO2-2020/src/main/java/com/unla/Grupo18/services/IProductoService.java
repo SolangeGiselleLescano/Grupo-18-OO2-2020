@@ -2,23 +2,23 @@ package com.unla.Grupo18.services;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.unla.Grupo18.entities.Producto;
 import com.unla.Grupo18.models.ProductoModel;
 
 
-
 public interface IProductoService {
 	
-public List<Producto> getAll();
+    public List<Producto> getAll();
 	
-	public ProductoModel findById(int id);
+	public Producto findByIdProducto(int idProducto);
 	
-	public ProductoModel findByName(String name);
+	public Producto findByDescripcion(String descripcion);
 	
-	public ProductoModel insertOrUpdate(ProductoModel productoModel);
+	public void insertOrUpdate(Producto producto);
 	
-	public boolean remove(int id);
-	
-	
+	void remove(int idProducto);
+
 
 }

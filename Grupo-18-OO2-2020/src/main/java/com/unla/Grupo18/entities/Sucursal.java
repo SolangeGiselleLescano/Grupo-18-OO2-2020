@@ -16,6 +16,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
+
 @Entity
 @Table(name="sucursal")
 public class Sucursal {
@@ -34,6 +35,9 @@ public class Sucursal {
 	
 	@OneToMany(fetch=FetchType.LAZY, mappedBy="sucursal")
 	private Set<Vendedor> vendedores = new HashSet<Vendedor>();
+	
+	@OneToMany(fetch=FetchType.LAZY, mappedBy="sucursal")
+	private Set<Lote> lotes = new HashSet<Lote>();
 	
 	public Sucursal() {
 
@@ -82,6 +86,14 @@ public class Sucursal {
 
 	public void setVendedores(Set<Vendedor> vendedores) {
 		this.vendedores = vendedores;
+	}
+
+	public Set<Lote> getLotes() {
+		return lotes;
+	}
+
+	public void setLotes(Set<Lote> lotes) {
+		this.lotes = lotes;
 	}
 
 	

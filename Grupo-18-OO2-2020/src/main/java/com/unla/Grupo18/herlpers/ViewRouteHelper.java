@@ -14,5 +14,13 @@ public class ViewRouteHelper {
 	public final static String PRODUCTO_UPDATE = "producto/update";
 	public final static String PRODUCTO_ROOT = "/producto";
 	public final static String PRODUCTO_INFO = "producto/infoProducto";	
+	
+	//lote
+	public final static String LOTE_INDEX = "lote/index";
+	public final static String LOTE_NEW = "lote/AltaLote";
+	public final static String LOTE_ROOT = "/lote";
+	public final static String LOTE_INFO = "lote/infoLote";	
+	public final static String LOTE_UPDATE = "lote/update";
+	
 
 }

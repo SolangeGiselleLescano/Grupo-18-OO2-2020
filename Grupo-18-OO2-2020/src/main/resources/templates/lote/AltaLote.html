@@ -1,0 +1,31 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>Alta de Lote</title>
+</head>
+<body>
+<div class="container">
+    <h2>Producto Lote</h2>
+    <div>
+        <form class="form-horizontal" th:object="${lote}" th:action="@{/lote/create}" method="get">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Cantidad Producto:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{cantidadProducto}"/>
+                </div>
+            </div>
+                        <div class="form-group">
+                <label class="col-sm-2 control-label">Cantidad  Actual</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{cantidadActual}"/>
+                </div>
+            </div>
+                       
+            <div class="row">
+                <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

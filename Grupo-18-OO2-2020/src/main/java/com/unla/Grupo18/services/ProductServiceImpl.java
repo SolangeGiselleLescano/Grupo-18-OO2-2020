@@ -53,7 +53,7 @@ public class ProductServiceImpl implements IProductoService {
 
 	@Override
 	public Producto findByDescripcion(String descripcion) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 	

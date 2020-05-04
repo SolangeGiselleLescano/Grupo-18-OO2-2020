@@ -16,7 +16,6 @@ import javax.persistence.Table;
 import org.hibernate.annotations.CreationTimestamp;
 
 
-
 @Entity
 @Table(name="lote")
 public class Lote {
@@ -42,8 +41,7 @@ public class Lote {
 	@JoinColumn(name="idProducto", nullable=true)
 	private Producto producto;
 	
-	@OneToOne(fetch = FetchType.LAZY)
-	// normalmente nullable es igual a false, en este caso se deja como true porque el ejemplo es simple
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="idSucursal", nullable=true)
 	private Sucursal sucursal;
 
@@ -53,23 +51,31 @@ public class Lote {
 	}
 
 	public Lote(int idLote, int cantidadProducto, int cantidadActual, LocalDate fechaDeIngreso,
-			Producto producto, Sucursal sucursal) {
+			Producto producto) {
 		super();
 		this.idLote = idLote;
 		this.cantidadProducto = cantidadProducto;
 		this.cantidadActual = cantidadActual;
 		this.fechaDeIngreso = fechaDeIngreso;
 		this.producto = producto;
-		this.sucursal = sucursal;
+		
 	}
 
-	public Lote(int cantidadProducto, int cantidadActual, LocalDate  fechaDeIngreso, Producto producto, Sucursal sucursal) {
+	public Lote(int cantidadProducto, int cantidadActual, LocalDate  fechaDeIngreso, Producto producto) {
 		super();
 		this.cantidadProducto = cantidadProducto;
 		this.cantidadActual = cantidadActual;
 		this.fechaDeIngreso = fechaDeIngreso;
 		this.producto = producto;
-		this.sucursal = sucursal;
+		
+	}
+	
+	
+
+	public Lote(int cantidadProducto, int cantidadActual) {
+		super();
+		this.cantidadProducto = cantidadProducto;
+		this.cantidadActual = cantidadActual;
 	}
 
 	public int getIdLote() {

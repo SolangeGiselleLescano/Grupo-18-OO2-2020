@@ -29,9 +29,10 @@ public class ProductServiceImpl implements IProductoService {
 	@Override
 	public void insertOrUpdate(Producto producto) {
 		   
-		    producto.setDescripcion(producto.getDescripcion());
-		    
-		    producto.setPrecioUnitario(producto.getPrecioUnitario());
+		
+		    producto.setProductosDescripcion(producto.getProductosDescripcion());
+		    producto.setProductosPrecioUnitario(producto.getProductosPrecioUnitario());
+		    //producto.setPrecioUnitario(producto.getPrecioUnitario());
 		    
 		    iProductoRepository.save(producto);
 	}
@@ -45,14 +46,16 @@ public class ProductServiceImpl implements IProductoService {
 
 
 	@Override
-	public Producto findByIdProducto(int idProducto) {
-		return iProductoRepository.findByIdProducto(idProducto);
+	public Producto findByproductosId(int idProducto) {
+		//return iProductoRepository.findByproductosId(idProducto);
+		return iProductoRepository.findByproductosId(idProducto);
+		
 	}
 
 
 
 	@Override
-	public Producto findByDescripcion(String descripcion) {
+	public Producto findByproductosDescripcion(String descripcion) {
 		
 		return null;
 	}

@@ -1,103 +1,137 @@
 package com.unla.Grupo18.entities;
 
-import java.util.HashSet;
-import java.util.Set;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.math.BigDecimal;
 
 
 
 @Entity
-@Table(name="sucursal")
-public class Sucursal {
-	
+@Table(name="sucursales")
+public class Sucursal  {
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idSucursal;
-	
-	@Column(name="telefono")
-	private String telefono;
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="sucursales_id")
+	private int sucursalesId;
 
-	@OneToOne(fetch = FetchType.LAZY)
-	// normalmente nullable es igual a false, en este caso se deja como true porque el ejemplo es simple
-	@JoinColumn(name="idDireccion", nullable=true)
-	private Direccion direccion;
-	
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="sucursal")
-	private Set<Vendedor> vendedores = new HashSet<Vendedor>();
-	
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="sucursal")
-	private Set<Lote> lotes = new HashSet<Lote>();
-	
+	@Column(name="sucursales_direccion")
+	private String sucursalesDireccion;
+
+	@Column(name="sucursales_email")
+	private String sucursalesEmail;
+
+	@Column(name="sucursales_empleado_id")
+	private int sucursalesEmpleadoId;
+
+	@Column(name="sucursales_latitud")
+	private BigDecimal sucursalesLatitud;
+
+	@Column(name="sucursales_longitud")
+	private BigDecimal sucursalesLongitud;
+
+	@Column(name="sucursales_telefono")
+	private String sucursalesTelefono;
+
 	public Sucursal() {
-
 	}
+	
+	
 
-	public Sucursal(int idSucursal, String telefono,Direccion direccion) {
+	public Sucursal(String sucursalesTelefono) {
 		super();
-		this.idSucursal = idSucursal;
-		this.telefono = telefono;
-		this.direccion = direccion;
+		this.sucursalesTelefono = sucursalesTelefono;
 	}
 
-	public Sucursal(String telefono,Direccion direccion) {
+	
+
+	public Sucursal(int sucursalesId, String sucursalesTelefono) {
 		super();
-		this.telefono = telefono;
-		this.direccion = direccion;;
+		this.sucursalesId = sucursalesId;
+		this.sucursalesTelefono = sucursalesTelefono;
 	}
 
-	public Direccion getDireccion() {
-		return direccion;
+
+
+	public Sucursal(int sucursalesId, String sucursalesDireccion, String sucursalesEmail, 
+			BigDecimal sucursalesLatitud, BigDecimal sucursalesLongitud, String sucursalesTelefono) {
+		super();
+		this.sucursalesId = sucursalesId;
+		this.sucursalesDireccion = sucursalesDireccion;
+		this.sucursalesEmail = sucursalesEmail;
+		this.sucursalesLatitud = sucursalesLatitud;
+		this.sucursalesLongitud = sucursalesLongitud;
+		this.sucursalesTelefono = sucursalesTelefono;
 	}
 
-	public void setDireccion(Direccion direccion) {
-		this.direccion = direccion;
+
+
+	public Sucursal(String sucursalesDireccion, String sucursalesEmail,
+			BigDecimal sucursalesLatitud, BigDecimal sucursalesLongitud, String sucursalesTelefono) {
+		super();
+		this.sucursalesDireccion = sucursalesDireccion;
+		this.sucursalesEmail = sucursalesEmail;
+		//this.sucursalesEmpleadoId = sucursalesEmpleadoId;
+		this.sucursalesLatitud = sucursalesLatitud;
+		this.sucursalesLongitud = sucursalesLongitud;
+		this.sucursalesTelefono = sucursalesTelefono;
 	}
 
-	public int getIdSucursal() {
-		return idSucursal;
+
+
+	public int getSucursalesId() {
+		return this.sucursalesId;
 	}
 
-	public void setIdSucursal(int idSucursal) {
-		this.idSucursal = idSucursal;
+	public void setSucursalesId(int sucursalesId) {
+		this.sucursalesId = sucursalesId;
 	}
 
-	public String getTelefono() {
-		return telefono;
+	public String getSucursalesDireccion() {
+		return this.sucursalesDireccion;
 	}
 
-	public void setTelefono(String telefono) {
-		this.telefono = telefono;
+	public void setSucursalesDireccion(String sucursalesDireccion) {
+		this.sucursalesDireccion = sucursalesDireccion;
 	}
 
-	public Set<Vendedor> getVendedores() {
-		return vendedores;
+	public String getSucursalesEmail() {
+		return this.sucursalesEmail;
 	}
 
-	public void setVendedores(Set<Vendedor> vendedores) {
-		this.vendedores = vendedores;
+	public void setSucursalesEmail(String sucursalesEmail) {
+		this.sucursalesEmail = sucursalesEmail;
 	}
 
-	public Set<Lote> getLotes() {
-		return lotes;
+	public int getSucursalesEmpleadoId() {
+		return this.sucursalesEmpleadoId;
 	}
 
-	public void setLotes(Set<Lote> lotes) {
-		this.lotes = lotes;
+	public void setSucursalesEmpleadoId(int sucursalesEmpleadoId) {
+		this.sucursalesEmpleadoId = sucursalesEmpleadoId;
 	}
 
-	
-	
-	
-	
+	public BigDecimal getSucursalesLatitud() {
+		return this.sucursalesLatitud;
+	}
+
+	public void setSucursalesLatitud(BigDecimal sucursalesLatitud) {
+		this.sucursalesLatitud = sucursalesLatitud;
+	}
+
+	public BigDecimal getSucursalesLongitud() {
+		return this.sucursalesLongitud;
+	}
+
+	public void setSucursalesLongitud(BigDecimal sucursalesLongitud) {
+		this.sucursalesLongitud = sucursalesLongitud;
+	}
+
+	public String getSucursalesTelefono() {
+		return this.sucursalesTelefono;
+	}
+
+	public void setSucursalesTelefono(String sucursalesTelefono) {
+		this.sucursalesTelefono = sucursalesTelefono;
+	}
+
 }

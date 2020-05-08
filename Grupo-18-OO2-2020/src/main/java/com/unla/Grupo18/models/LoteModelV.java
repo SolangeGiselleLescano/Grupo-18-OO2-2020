@@ -2,7 +2,7 @@ package com.unla.Grupo18.models;
 
 import java.time.LocalDate;
 
-public class LoteModel {
+public class LoteModelV {
 	
 	private int idLote;
 	private int cantidadProducto;
@@ -10,11 +10,11 @@ public class LoteModel {
 	private LocalDate fechaDeIngreso;
 	
 	
-	public LoteModel() {
+	public LoteModelV() {
 	}
 
 
-	public LoteModel(int idLote, int cantidadProducto, int cantidadActual, LocalDate fechaDeIngreso) {
+	public LoteModelV(int idLote, int cantidadProducto, int cantidadActual, LocalDate fechaDeIngreso) {
 		super();
 		this.idLote = idLote;
 		this.cantidadProducto = cantidadProducto;

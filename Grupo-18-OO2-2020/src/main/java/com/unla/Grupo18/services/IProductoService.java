@@ -12,13 +12,15 @@ public interface IProductoService {
 	
     public List<Producto> getAll();
 	
-	public Producto findByIdProducto(int idProducto);
+	public Producto findByproductosId(int idProducto);
 	
-	public Producto findByDescripcion(String descripcion);
+	public Producto findByproductosDescripcion(String descripcion);
 	
 	public void insertOrUpdate(Producto producto);
 	
 	void remove(int idProducto);
+
+	
 
 
 }

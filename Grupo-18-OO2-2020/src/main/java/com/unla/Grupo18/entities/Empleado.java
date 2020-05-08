@@ -1,45 +1,67 @@
 package com.unla.Grupo18.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
+import javax.persistence.*;
+
+
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
-public class Empleado extends Persona {
-	
-	private int horasPorJornada;
-	
-	private float sueldoBasico;
 
-	public Empleado() {
+public class Empleado  extends Persona {
+
+
+	
+	private String empleadosFechaIngreso;
+
+	
+	private double empleadosSueldoBasico;
+
+
+	@ManyToOne
+	@JoinColumn(name="empleados_franjas_horarias_id")
+	private FranjaHoraria franjaHoraria;
+
+
+
+	@ManyToOne
+	@JoinColumn(name="empleados_tipo_empleado")
+	private TipoEmpleado tipoEmpleado;
+
+	
+
+
+	
+
+	public String getEmpleadosFechaIngreso() {
+		return this.empleadosFechaIngreso;
 	}
 
-	public Empleado(int horasPorJornada, float sueldoBasico) {
-		super();
-		this.horasPorJornada = horasPorJornada;
-		this.sueldoBasico = sueldoBasico;
+	public void setEmpleadosFechaIngreso(String empleadosFechaIngreso) {
+		this.empleadosFechaIngreso = empleadosFechaIngreso;
 	}
 
-	public int getHorasPorJornada() {
-		return horasPorJornada;
+	public double getEmpleadosSueldoBasico() {
+		return this.empleadosSueldoBasico;
 	}
 
-	public void setHorasPorJornada(int horasPorJornada) {
-		this.horasPorJornada = horasPorJornada;
+	public void setEmpleadosSueldoBasico(double empleadosSueldoBasico) {
+		this.empleadosSueldoBasico = empleadosSueldoBasico;
 	}
 
-	public float getSueldoBasico() {
-		return sueldoBasico;
+	public FranjaHoraria getFranjaHoraria() {
+		return this.franjaHoraria;
 	}
 
-	public void setSueldoBasico(float sueldoBasico) {
-		this.sueldoBasico = sueldoBasico;
+	public void setFranjaHoraria(FranjaHoraria franjaHoraria) {
+		this.franjaHoraria = franjaHoraria;
 	}
+
 	
-	
-	
-	
-	
+	public TipoEmpleado getTipoEmpleado() {
+		return this.tipoEmpleado;
+	}
+
+	public void setTipoEmpleado(TipoEmpleado tipoEmpleado) {
+		this.tipoEmpleado = tipoEmpleado;
+	}
 
 }

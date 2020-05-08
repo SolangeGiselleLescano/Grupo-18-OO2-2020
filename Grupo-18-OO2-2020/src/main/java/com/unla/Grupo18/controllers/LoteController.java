@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
-import com.unla.Grupo18.entities.Lote;
+import com.unla.Grupo18.entities.LoteProducto;
 import com.unla.Grupo18.entities.Producto;
 import com.unla.Grupo18.herlpers.ViewRouteHelper;
 import com.unla.Grupo18.services.ILoteService;;
@@ -33,12 +33,12 @@ public class LoteController {
 	public ModelAndView create() {
 		
 		ModelAndView mAV = new ModelAndView(ViewRouteHelper.LOTE_NEW);
-		mAV.addObject("lote", new Lote());		
+		mAV.addObject("lote", new LoteProducto());		
 		return mAV;
 	}
 	
 	@GetMapping("/create")
-	public RedirectView create(@ModelAttribute("lote") Lote lote) {
+	public RedirectView create(@ModelAttribute("lote") LoteProducto lote) {
 		loteService.insertOrUpdate(lote);
 		return new RedirectView(ViewRouteHelper.LOTE_ROOT); 
 	}

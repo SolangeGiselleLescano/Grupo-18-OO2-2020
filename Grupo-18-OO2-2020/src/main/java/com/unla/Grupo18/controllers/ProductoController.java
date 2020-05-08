@@ -52,7 +52,7 @@ public class ProductoController {
 	public ModelAndView get(@PathVariable("id") int id) {
 		ModelAndView mAV = new ModelAndView(ViewRouteHelper.PRODUCTO_INFO);
 		//System.out.println(productoService.findByIdProducto(id).getDescripcion());
-		mAV.addObject("producto", productoService.findByIdProducto(id));
+		mAV.addObject("producto", productoService.findByproductosId(id));
 		return mAV;
 		//return null;
 	}
@@ -60,7 +60,7 @@ public class ProductoController {
 	@GetMapping("/by_name/{name}")
 	public ModelAndView getByName(@PathVariable("name") String name) {
 		ModelAndView mAV = new ModelAndView(ViewRouteHelper.PRODUCTO_UPDATE);
-		mAV.addObject("producto", productoService.findByDescripcion(name));
+		mAV.addObject("producto", productoService.findByproductosDescripcion(name));
 		return mAV;
 	}
 	
@@ -68,7 +68,7 @@ public class ProductoController {
 	@GetMapping("/update/{id}")
 	public ModelAndView update(@PathVariable("id") int id) {
 		ModelAndView mAV = new ModelAndView(ViewRouteHelper.PRODUCTO_UPDATE);
-		mAV.addObject("producto", productoService.findByIdProducto(id));
+		mAV.addObject("producto", productoService.findByproductosId(id));
 		return mAV;
 		
 	}

@@ -13,9 +13,9 @@ import com.unla.Grupo18.entities.Producto;
 @Repository("productoRepository")
 public interface IProductoRepository extends JpaRepository<Producto, Serializable> {
 	
-	public Producto findByIdProducto(int idProducto);
+	public Producto findByproductosId(int idProducto);
 	
-	public Producto findByDescripcion(String descripcion);
+	public Producto findByproductosDescripcion(String descripcion);
 	
 
 }

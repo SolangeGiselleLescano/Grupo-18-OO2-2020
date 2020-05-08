@@ -5,9 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.unla.Grupo18.entities.Lote;
+
+import com.unla.Grupo18.entities.LoteProducto;
 import com.unla.Grupo18.repositories.ILoteRepository;
-import com.unla.Grupo18.repositories.IProductoRepository;
+
 
 @Service
 public class LoteServiceImpl implements ILoteService{
@@ -20,20 +21,23 @@ public class LoteServiceImpl implements ILoteService{
 	    }
 
 	@Override
-	public List<Lote> getAll() {
+	public List<LoteProducto> getAll() {
 		return iLoteRepository.findAll();
 	}
 
 	@Override
-	public Lote findByIdLote(int idLote) {
-		return iLoteRepository.findByIdLote(idLote);
+	public LoteProducto findByIdLote(int idLote) {
+		return iLoteRepository.findBylpRowid(idLote);
 	}
 
 	@Override
-	public void insertOrUpdate(Lote lote) {
-			    
-		lote.setCantidadActual(lote.getCantidadActual());
-		lote.setCantidadProducto(lote.getCantidadProducto());
+	public void insertOrUpdate(LoteProducto lote) {
+		
+		
+	lote.setLpCantidad(lote.getLpCantidad());
+	
+		//lote.setCantidadActual(lote.getLpRowid());
+		
 		//lote.setProducto(lote.getProducto());
 		//lote.setSucursal(lote.getSucursal());
 		iLoteRepository.save(lote);

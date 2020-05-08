@@ -1,0 +1,26 @@
+<table border="1px">
+	<thead>
+		<tr>
+			<th>id</th>
+			<th>View</th>
+			<th>Delete</th>
+			<th>Update</th>
+					</tr>
+	</thead>
+	<tbody>
+		<tr th:each="sucursal : ${sucursales}">
+			<td><span th:text="${sucursal.sucursalesId}" /></td>
+			<td>
+				<a th:href="@{/sucursal/{sucursalesId}(sucursalesId=${sucursal.sucursalesId})}">View</a>
+			</td>
+						<td>
+				<a th:href="@{/sucursal/delete/{sucursalesId}(sucursalesId=${sucursal.sucursalesId})}">Eliminar</a>
+			</td>
+			<td>
+				<a th:href="@{/sucursal/update/{sucursalesId}(sucursalesId=${sucursal.sucursalesId})}">Update</a>
+			</td>
+		</tr>
+			
+	</tbody>
+</table>
+<a href="/sucursal/new">Crear nuevo sucursal</a>

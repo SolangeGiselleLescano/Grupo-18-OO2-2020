@@ -1,38 +1,28 @@
 package com.unla.Grupo18.entities;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
+import java.util.Date;
+
 
 @Entity
-public class Cliente extends Persona {
-	
-	
-	private String mail;
-	
-	
+
+public class Cliente extends Persona  {
+
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="cliente_fecha_ultima_compra")
+	private Date clienteFechaUltimaCompra;
 
 	public Cliente() {
 	}
 
 
-
-	public Cliente(String mail) {
-		super();
-		this.mail = mail;
+	public Date getClienteFechaUltimaCompra() {
+		return this.clienteFechaUltimaCompra;
 	}
 
-
-
-	public String getMail() {
-		return mail;
+	public void setClienteFechaUltimaCompra(Date clienteFechaUltimaCompra) {
+		this.clienteFechaUltimaCompra = clienteFechaUltimaCompra;
 	}
-
-
-
-	public void setMail(String mail) {
-		this.mail = mail;
-	}
-	
-	
-	
 
 }

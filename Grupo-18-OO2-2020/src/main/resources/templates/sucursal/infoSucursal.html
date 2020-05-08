@@ -1,0 +1,32 @@
+<table border="1px">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>direccion</th>
+			<th>mail<th>
+			<th>Latitud</th>
+			<th>Longitud</th>
+			<th>telefono</th>		
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><span th:text="${sucursal.idSucursal}" /></td>
+			<td>
+				<span th:text="${sucursal.direccion}" /></td>
+			</td>
+			<td>
+				<span th:text="${sucursal.mail}" /></td>
+			</td>
+			<td>
+				<span th:text="${sucursal.latitud}" /></td>
+			</td>
+			<td>
+				<span th:text="${sucursal.longitud}" /></td>
+			</td>
+			<td>
+				<span th:text="${sucursal.telefono}" /></td>
+			</td>
+		</tr>
+	</tbody>
+</table>

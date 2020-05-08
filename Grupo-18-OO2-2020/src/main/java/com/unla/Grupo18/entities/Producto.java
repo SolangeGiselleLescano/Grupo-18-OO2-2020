@@ -1,94 +1,84 @@
 package com.unla.Grupo18.entities;
+import javax.persistence.*;
+import java.math.BigDecimal;
+import java.util.Date;
 
-import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.Set;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import org.hibernate.annotations.CreationTimestamp;
 
 
 @Entity
-@Table(name="producto")
-public class Producto {
+@Table(name="productos")
+public class Producto  {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idProducto;
-	
-	
-	@Column(name="descripcion")
-	private String descripcion;
-	
-	@Column(name="precioUnitario")
-	private float precioUnitario;
-	
-	@Column(name="fechaAlta")
-	@CreationTimestamp
-	private LocalDate fechaAlta;
-	
-	
-		
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="producto")
-	private Set<Lote> lotes = new HashSet<Lote>();
-	
-	
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="productos_id")
+	private int productosId;
+
+	@Column(name="producto_codigo")
+	private String productoCodigo;
+
+	@Column(name="productos_descripcion")
+	private String productosDescripcion;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="productos_fecha_alta")
+	private Date productosFechaAlta;
+
+	@Column(name="productos_marca")
+	private String productosMarca;
+
+	@Column(name="productos_precio_unitario")
+	private BigDecimal productosPrecioUnitario;
 
 	public Producto() {
 	}
 
-	
-
-	public Producto(String descripcion, float precioUnitario) {
-		super();
-		this.descripcion = descripcion;
-		this.precioUnitario = precioUnitario;
+	public int getProductosId() {
+		return this.productosId;
 	}
 
-	public int getIdProducto() {
-		return idProducto;
+	public void setProductosId(int productosId) {
+		this.productosId = productosId;
 	}
 
-	public void setIdProducto(int idProducto) {
-		this.idProducto = idProducto;
+	public String getProductoCodigo() {
+		return this.productoCodigo;
 	}
 
-	
-
-	public String getDescripcion() {
-		return descripcion;
+	public void setProductoCodigo(String productoCodigo) {
+		this.productoCodigo = productoCodigo;
 	}
 
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
+	public String getProductosDescripcion() {
+		return this.productosDescripcion;
 	}
 
-	public float getPrecioUnitario() {
-		return precioUnitario;
+	public void setProductosDescripcion(String productosDescripcion) {
+		this.productosDescripcion = productosDescripcion;
 	}
 
-	public void setPrecioUnitario(float precioUnitario) {
-		this.precioUnitario = precioUnitario;
+	public Date getProductosFechaAlta() {
+		return this.productosFechaAlta;
 	}
 
-	public LocalDate getFechaAlta() {
-		return fechaAlta;
+	public void setProductosFechaAlta(Date productosFechaAlta) {
+		this.productosFechaAlta = productosFechaAlta;
 	}
 
-	public void setFechaAlta(LocalDate fechaAlta) {
-		this.fechaAlta = fechaAlta;
+	public String getProductosMarca() {
+		return this.productosMarca;
 	}
 
-	
+	public void setProductosMarca(String productosMarca) {
+		this.productosMarca = productosMarca;
+	}
 
-	
-	
-	
+	public BigDecimal getProductosPrecioUnitario() {
+		return this.productosPrecioUnitario;
+	}
+
+	public void setProductosPrecioUnitario(BigDecimal productosPrecioUnitario) {
+		this.productosPrecioUnitario = productosPrecioUnitario;
+	}
+
 }

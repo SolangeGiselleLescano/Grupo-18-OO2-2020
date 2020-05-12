@@ -91,14 +91,14 @@ public class SucursalController {
 		
 	}*/
 	
-	@GetMapping("/distancia")
-	public ModelAndView  distancia1 (@RequestParam(value="id")int id) {
+	@GetMapping("/distancia/{id}")
+	public ModelAndView  distancia1 (@PathVariable("id") int id) {
 		
 		ModelAndView mAV = new ModelAndView(ViewRouteHelper.SUCURSAL_DISTANCIA);
 		
 		SucursalModel sucursal = sucursalService.findBysucursalesId(id);	
 		
-		double distancia = sucursalService.distancias(sucursal);		
+		Sucursal distancia = sucursalService.distancias(sucursal);		
 		
 		
 		mAV.addObject("distancia",distancia);

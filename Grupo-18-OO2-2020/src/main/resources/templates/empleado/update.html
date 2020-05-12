@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<div class="p-3 mb-2 bg-secondary text-white"><head>
+<div class="p-3 mb-2 bg-secondary text-white">
+    <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index">Home</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Despedirse</a>
+          </li>
+          </div>
+  </nav>
+
+<head>
 		<meta charset="utf-8" />
 		<title>Update Empleado</title>
 		<!-- Bootstrap core CSS -->
@@ -9,42 +25,50 @@
 	</head>
 <body>
 
-
+<div class="container">
+    <h2>Empleado detalle</h2>
+    <div>
 <form th:object="${empleado}" th:action="@{/empleado/update/} + ${empleado}" method="post">
 	<!-- <input type="hidden" th:field="*{empleadoModel.personaId}" /> -->
 	
         <label for="lblDNI">DNI</label><br>
-        <input type="text" th:field="${empleado.personaId}"/> </br></br>
+        <input type="text"  class="form-control" th:field="${empleado.personaId}"/> </br></br>
 		<label for="lblNombre">Nombre</label><br>
-		<input type="text" th:field="${empleado.personaNombre}"/> </br>
+		<input type="text"  class="form-control"th:field="${empleado.personaNombre}"/> </br>
 		<label for="lblApellido">Apellido</label><br>
-		<input type="text" th:field="${empleado.personaApellido}"/></br> 
+		<input type="text"  class="form-control"th:field="${empleado.personaApellido}"/></br> 
 		<label for="lblDireccion">Direccion</label><br>
-		<input type="text" th:field="${empleado.personaDireccion}"/> </br>
+		<input type="text"  class="form-control"th:field="${empleado.personaDireccion}"/> </br>
 		<label for="lblEmail">Email</label><br>
-		<input type="text" th:field="${empleado.personaEmail}"/></br> 
+		<input type="text"  class="form-control"th:field="${empleado.personaEmail}"/></br> 
 		<label for="lblFechaIngreso">Fecha Nacimiento</label><br>
-		<input type="date" th:value="${empleado.personaFechaNacimiento}" th:field="${empleado.personaFechaNacimiento}"/> </br>
+		<input type="date"  class="form-control"th:value="${empleado.personaFechaNacimiento}" th:field="${empleado.personaFechaNacimiento}"/> </br>
 		<label for="lblFechaIngreso">Fecha Ingreso</label><br>
-		<input type="date" th:value="${empleado.empleadoFechaIngreso}" th:field="${empleado.empleadoFechaIngreso}"/> </br>
+		<input type="date"  class="form-control" th:value="${empleado.empleadoFechaIngreso}" th:field="${empleado.empleadoFechaIngreso}"/> </br>
 		<label for="lblSueldoBasico">Sueldo Basico</label><br>
-		<input type="text" th:field="${empleado.empleadoSueldoBasico}"/> </br>
+		<input type="text"  class="form-control" th:field="${empleado.empleadoSueldoBasico}"/> </br>
 	    <label for="lblTipoEmpleado">Tipo Empleado</label><br>
         <!-- <input type="text" th:field="${tipoEmpleado.teDescripcion}"/> </br>-->
         <table>
-              <select th:field="${empleado.personaTipo}">
-                           <!-- <option th:value="${empleado.personaTipo}" th:text="${tipoEmpleado.teDescripcion}"></option>--> 
-                         <option th:each="tipo : ${tipoEmpleados}"
+              <select  class="form-control" th:field="${empleado.personaTipo}">
+                      <option th:each="tipo : ${tipoEmpleados}"
                             th:value="${tipo.teId}"
                             th:utext="${tipo.teDescripcion}"/>
                   </select>
  	</table>
-	<input type="submit" value="Edit" />
+		 
+<button type="submit" class="btn btn-primary">Actualizar</button><br>
 </form>
 
-</div>
+
 </body>
 <!-- Bootstrap core JavaScript -->
 	    <script src="/vendor/jquery/jquery.min.js"></script>
 	    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	      <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Grupo 18 - OO2- 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
 </html>

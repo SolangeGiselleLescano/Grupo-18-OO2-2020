@@ -74,18 +74,17 @@ public class SucursalService implements ISucursalService {
 	}
 
 	@Override
-	public double distancias(SucursalModel sucursal) {
+	public Sucursal distancias(SucursalModel sucursal) {
 		List<Sucursal> sucursales = sucursalRepository.findAll();
 		SucursalModel sucursal2;
 		SucursalModel sucpivote = new SucursalModel();
-		double distancia = 0;
+		
+		double distancia = 400000000;
 		for(int indice = 0;indice< sucursales.size();indice++)
-		{
-			
-			sucursal2 = sucursalConverter.entityToModel(sucursales.get(indice));
-			
-			if(sucursal2.getIdSucursal() != sucursal.getIdSucursal()){
-				
+		{		
+			sucursal2 = sucursalConverter.entityToModel(sucursales.get(indice));			
+							
+			if(sucursal2.getIdSucursal() != sucursal.getIdSucursal()){				
 				
 				double radioTierra = 6371; //en kilómetros
 				double dLat = Math.toRadians(sucursal.getLatitud() - sucursal2.getLatitud());
@@ -97,22 +96,15 @@ public class SucursalService implements ISucursalService {
 				double va2 = 2 * Math.atan2(Math.sqrt(va1), Math.sqrt(1 - va1));
 
 				double distanciaPivote = radioTierra * va2;
-
-				if (indice == 1) {
-					
-					distancia = distanciaPivote;
-					
-					
-				} 
-				if (distanciaPivote < distancia) {
-					sucpivote = sucursal2;
-					distancia = distanciaPivote;
-					
-				}									
+				
+				if  (distanciaPivote < distancia) {
+					 sucpivote = sucursal2;
+					distancia = distanciaPivote;					
+				}							
 			}		
-		}
-
-		return distancia;
+		}		
+		
+		return sucursalConverter.modelToEntity(sucpivote);
 
 	}
 

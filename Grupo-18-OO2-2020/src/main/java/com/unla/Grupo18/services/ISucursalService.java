@@ -17,7 +17,7 @@ public interface ISucursalService {
 	
 	public  boolean  remove (int idSucursal);
 	
-	public double distancias(SucursalModel sucursal);
+	public Sucursal distancias(SucursalModel sucursal);
 	
 	public double distnaciaSucursales(SucursalModel sucursal,SucursalModel sucursal2);
 

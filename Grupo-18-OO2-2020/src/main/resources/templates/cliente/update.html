@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<div class="p-3 mb-2 bg-secondary text-white"><head>
+<div class="p-3 mb-2 bg-secondary text-white">
+  <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index">Home</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Despedirse</a>
+          </li>
+          </div>
+  </nav>
+<head>
 		<meta charset="utf-8" />
 		<title>Alta Cliente</title>
 		<!-- Bootstrap core CSS -->
@@ -8,33 +23,40 @@
 		<link href="/css/modern-business.css" rel="stylesheet" />
 	</head>
 <body>
-
-	<form th:object="${empleado}" th:action="@{/cliente/update/} + ${cliente}" method="post">
+<div class="container">
+    <h2>Cliente detalle</h2>
+    <div>
+	<form class="form-horizontal" th:object="${empleado}" th:action="@{/cliente/update/} + ${cliente}" method="post">
 	<!-- <input type="hidden" th:field="*{clienteModel.personaId}" /> -->
 	
         <label for="lblDNI">DNI</label><br>
-        <input type="text" th:field="${cliente.personaId}"/> </br></br>
-		<label for="lblNombre">Nombre</label><br>
-		<input type="text" th:field="${cliente.personaNombre}"/> </br>
-		<label for="lblApellido">Apellido</label><br>
-		<input type="text" th:field="${cliente.personaApellido}"/></br> 
+        <input type="text" class="form-control"th:field="${cliente.personaId}"/> </br>
+		<label for="lblNombre" >Nombre</label><br>
+		<input type="text" class="form-control" th:field="${cliente.personaNombre}"/> </br>
+		<label for="lblApellido" >Apellido</label><br>
+		<input type="text" class="form-control" th:field="${cliente.personaApellido}"/></br> 
 		<label for="lblDireccion">Direccion</label><br>
-		<input type="text" th:field="${cliente.personaDireccion}"/> </br>
+		<input type="text" class="form-control"th:field="${cliente.personaDireccion}"/> </br>
 		<label for="lblEmail">Email</label><br>
-		<input type="text" th:field="${cliente.personaEmail}"/></br> 
+		<input type="text" class="form-control"th:field="${cliente.personaEmail}"/></br> 
 		<label for="lblFechaIngreso">Fecha Nacimiento</label><br>
-		<input type="date" th:value="${cliente.personaFechaNacimiento}" th:field="${cliente.personaFechaNacimiento}"/> </br>
+		<input type="date" class="form-control" th:value="${cliente.personaFechaNacimiento}" th:field="${cliente.personaFechaNacimiento}"/> </br>
 	    
- 	</p>
  	
- 	</div>
- 	</div>
- 	<input type="submit" value="Edit" />
+ 	 <button type="submit" class="btn btn-primary">Actualizar</button>
+ 
+ 	
 </form>
 
-</div>
+
 </body>
 <!-- Bootstrap core JavaScript -->
 	    <script src="/vendor/jquery/jquery.min.js"></script>
 	    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	      <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy;  Grupo 18 - OO2- 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
 </html>

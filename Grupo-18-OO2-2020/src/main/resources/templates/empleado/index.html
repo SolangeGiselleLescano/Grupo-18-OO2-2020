@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <div class="p-3 mb-2 bg-secondary text-white">
+    <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index">Home</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Despedirse</a>
+          </li>
+          </div>
+  </nav>
 	<head>
 		<meta charset="utf-8" />
 		<title>UNLa</title>
@@ -45,10 +59,18 @@
 		</tr>
 	</tbody>
 </table>
-<a href="/empleado/new">Crear nuevo cliente</a>
-</body>
+
+<a href="/empleado/new" class="btn btn-primary">Crear nuevo Empleado</a>
+  </body>
 <!-- Bootstrap core JavaScript -->
 	    <script src="/vendor/jquery/jquery.min.js"></script>
 	    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-	    </div>
+	    
+	    <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Grupo 18 - OO2- 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
 </html>

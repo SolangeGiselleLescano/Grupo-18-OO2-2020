@@ -11,6 +11,7 @@ public class ViewRouteHelper {
 	
 	//Redirects
 	public final static String  ROUTE_INDEX = "/index";
+	public final static String ROUTE = "/index";
 	
 	//producto
 	public final static String PRODUCTO_INDEX = "producto/index";

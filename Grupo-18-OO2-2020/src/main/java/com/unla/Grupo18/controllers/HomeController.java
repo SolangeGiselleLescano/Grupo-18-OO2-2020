@@ -18,6 +18,7 @@ import com.unla.Grupo18.herlpers.ViewRouteHelper;
 @RequestMapping("/")
 public class HomeController {
 	
+
 	//GET Example: SERVER/index
 	@GetMapping("/index")
 	public ModelAndView index() {
@@ -25,5 +26,26 @@ public class HomeController {
 		User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		modelAndView.addObject("username", user.getUsername());
 		return modelAndView;
+	}
+	
+	//GET Example: SERVER/hello?name=someName
+	@GetMapping("/hello")
+	public ModelAndView helloParams1(@RequestParam(name="name", required=false, defaultValue="null") String name) {
+		ModelAndView mV = new ModelAndView(ViewRouteHelper.HELLO);
+		mV.addObject("name", name);
+		return mV;
+	}
+	
+	//GET Example: SERVER/hello/someName
+	@GetMapping("/hello/{name}")
+	public ModelAndView helloParams2(@PathVariable("name") String name) {
+		ModelAndView mV = new ModelAndView(ViewRouteHelper.HELLO);
+		mV.addObject("name", name);
+		return mV;
+	}
+	
+	@GetMapping("/")
+	public RedirectView redirectToHomeIndex() {
+		return new RedirectView(ViewRouteHelper.ROUTE);
 	}
 }

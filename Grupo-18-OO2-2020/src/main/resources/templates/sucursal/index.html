@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <div class="p-3 mb-2 bg-secondary text-white">
+ <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index">Home</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Despedirse</a>
+          </li>
+          </div>
+  </nav>
 	<head>
 		<meta charset="utf-8" />
 		<title>UNLa</title>
@@ -13,32 +27,53 @@
 	<table class="table table-dark">
 	<thead>
 		<tr>
-			<th scope="col">id</th>
-			<th scope="col">View</th>
-			<th scope="col">Delete</th>
+			<th scope="col">ID</th>
+			<th scope="col">Direccion</th>
+			<th scope="col">Mail</th>
+			<th scope="col">Telefono</th>
+			<th scope="col">Sucursal mas cercana</th>
 			<th scope="col">Update</th>
-					</tr>
+			<th scope="col">Delete</th>
+	 </tr>
 	</thead>
 	<tbody>
 		<tr th:each="sucursal : ${sucursales}">
-			<td><span th:text="${sucursal.sucursalesId}" /></td>
+			<td><a th:text="${sucursal.sucursalesId}" /></a></td>
+			<td><a th:text="${sucursal.sucursalesDireccion}" /></a></td>
+			<td><a th:text="${sucursal.sucursalesEmail}" /></a></td>
+			<td><a th:text="${sucursal.sucursalesTelefono}" /></a></td>
 			<td>
-				<a th:href="@{/sucursal/{sucursalesId}(sucursalesId=${sucursal.sucursalesId})}">View</a>
-			</td>
-						<td>
-				<a th:href="@{/sucursal/delete/{sucursalesId}(sucursalesId=${sucursal.sucursalesId})}">Eliminar</a>
+				<a th:href="@{/sucursal/distancia/{sucursalesId}(sucursalesId=${sucursal.sucursalesId})}">Sucursal mas cercana</a>
 			</td>
 			<td>
 				<a th:href="@{/sucursal/update/{sucursalesId}(sucursalesId=${sucursal.sucursalesId})}">Update</a>
 			</td>
+			<td>
+				<a th:href="@{/sucursal/delete/{sucursalesId}(sucursalesId=${sucursal.sucursalesId})}">Eliminar</a>
+			</td>
 		</tr>
 			
 	</tbody>
+	
 </table>
-<a href="/sucursal/new">Crear nuevo sucursal</a>
+<a href="/sucursal/new" class="btn btn-primary">Nueva Sucursal</a><br>
+
+<!--  <a href="/sucursal/new">Crear nuevo sucursal</a>-->
 </body>
+<footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Democratizacion Stock 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
 <!-- Bootstrap core JavaScript -->
 	    <script src="/vendor/jquery/jquery.min.js"></script>
 	    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	    </div>
+	     <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Grupo 18 - OO2- 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
 </html>

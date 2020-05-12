@@ -6,9 +6,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
+import com.unla.Grupo18.converters.SucursalConverter;
 import com.unla.Grupo18.entities.Sucursal;
 import com.unla.Grupo18.herlpers.ViewRouteHelper;
 import com.unla.Grupo18.models.SucursalModel;
@@ -29,6 +31,9 @@ public class SucursalController {
 		mAV.addObject("sucursales", sucursalService.getAll());
 		return mAV;
 	}
+	
+	
+	
 	
 	@GetMapping("/new")
 	public ModelAndView create() {
@@ -67,5 +72,39 @@ public class SucursalController {
 		sucursalService.remove(id);
 		return new RedirectView(ViewRouteHelper.SUCURSAL_ROOT);
 	}
+	
+	
+	/*@GetMapping("/distancia")
+	public ModelAndView  distancia (@RequestParam(value="id")int id, @RequestParam(value= "id2") int id2) {
+		
+		System.out.println("___");
+		ModelAndView mAV = new ModelAndView(ViewRouteHelper.SUCURSAL_DISTANCIA);
+		System.out.println("___");
+		SucursalModel sucursal = sucursalService.findBysucursalesId(id);
+		System.out.println("___");
+		SucursalModel sucursal2 = sucursalService.findBysucursalesId(id2);
+		System.out.println("___");
+		double distancia = sucursalService.distnaciaSucursales(sucursal, sucursal2);
+		System.out.println(distancia);
+		mAV.addObject("distancia",distancia);
+		return mAV;	
+		
+	}*/
+	
+	@GetMapping("/distancia")
+	public ModelAndView  distancia1 (@RequestParam(value="id")int id) {
+		
+		ModelAndView mAV = new ModelAndView(ViewRouteHelper.SUCURSAL_DISTANCIA);
+		
+		SucursalModel sucursal = sucursalService.findBysucursalesId(id);	
+		
+		double distancia = sucursalService.distancias(sucursal);		
+		
+		
+		mAV.addObject("distancia",distancia);
+		return mAV;	
+		
+	}
+
 
 }

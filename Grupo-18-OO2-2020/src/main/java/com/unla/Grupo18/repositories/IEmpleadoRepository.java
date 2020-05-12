@@ -7,16 +7,16 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.unla.Grupo18.entities.Persona;
+import com.unla.Grupo18.entities.Empleado;
 
 
 
-@Repository("personRepository")
-public interface  IPersonRepository  extends JpaRepository<Persona, Serializable>{
+@Repository("empleadoRepository")
+public interface  IEmpleadoRepository  extends JpaRepository<Empleado, Serializable>{
 
-public  Persona findByPersonaId(int id);
+public  Empleado findByPersonaId(int id);
 	
-	public  Persona findByPersonaNombre(String nombre);
+	public  Empleado findByPersonaNombre(String nombre);
 	
 	// Todas las personas que tengan un título con ese nombre (parámetro name)
 	//@Query("SELECT p FROM Person p JOIN FETCH p.degrees d WHERE d.name = (:name)")

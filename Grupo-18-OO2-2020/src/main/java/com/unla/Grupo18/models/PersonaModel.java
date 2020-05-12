@@ -3,138 +3,137 @@ package com.unla.Grupo18.models;
 
 public class PersonaModel {
 	
-	private int personasId;
+	private int personaId;
 	
-	private int personasDni;
+	private int personaDni;
 
 	
-	private String personasApellido;
+	private String personaApellido;
 
 	
-	private String personasDireccion;
+	private String personaDireccion;
 
 	
-	private String personasEmail;
+	private String personaEmail;
 
 	
-	private String personasNombre;
+	private String personaNombre;
 
 	
-	private String personasTelefono;
+	private String personaTelefono;
 
 	
-	private int personasTipo;
+	private String personaFechaNacimiento;
+	
+	private int personaTipo;
 
-	
-	
 
 	public PersonaModel() {
 	}
 
-	
-	
 
-	public PersonaModel(int personasId, int personasDni, String personasApellido) {
+	public PersonaModel(int personaId, String personaApellido, String personaDireccion,
+			String personaEmail, String personaNombre, String personaTelefono, String personaFechaNacimiento,
+			int personaTipo) {
 		super();
-		this.personasId = personasId;
-		this.personasDni = personasDni;
-		this.personasApellido = personasApellido;
+		this.personaId = personaId;
+		this.personaApellido = personaApellido;
+		this.personaDireccion = personaDireccion;
+		this.personaEmail = personaEmail;
+		this.personaNombre = personaNombre;
+		this.personaTelefono = personaTelefono;
+		this.personaFechaNacimiento = personaFechaNacimiento;
+		this.personaTipo = personaTipo;
 	}
 
 
-
-
-	public PersonaModel(int personasId, int personasDni, String personasApellido,String personasNombre, String personasDireccion,
-			String personasEmail,  String personasTelefono, int personasTipo) {
-		super();
-		this.personasId = personasId;
-		this.personasDni = personasDni;
-		this.personasApellido = personasApellido;
-		this.personasDireccion = personasDireccion;
-		this.personasEmail = personasEmail;
-		this.personasNombre = personasNombre;
-		this.personasTelefono = personasTelefono;
-		this.personasTipo = personasTipo;
+	public int getPersonaId() {
+		return personaId;
 	}
 
 
-	public int getPersonasId() {
-		return personasId;
+	public void setPersonaId(int personaId) {
+		this.personaId = personaId;
 	}
 
 
-	public void setPersonasId(int personasId) {
-		this.personasId = personasId;
+	public int getPersonaDni() {
+		return personaDni;
 	}
 
 
-	public int getPersonasDni() {
-		return personasDni;
+	public void setPersonaDni(int personaDni) {
+		this.personaDni = personaDni;
 	}
 
 
-	public void setPersonasDni(int personasDni) {
-		this.personasDni = personasDni;
+	public String getPersonaApellido() {
+		return personaApellido;
 	}
 
 
-	public String getPersonasApellido() {
-		return personasApellido;
+	public void setPersonaApellido(String personaApellido) {
+		this.personaApellido = personaApellido;
 	}
 
 
-	public void setPersonasApellido(String personasApellido) {
-		this.personasApellido = personasApellido;
+	public String getPersonaDireccion() {
+		return personaDireccion;
 	}
 
 
-	public String getPersonasDireccion() {
-		return personasDireccion;
+	public void setPersonaDireccion(String personaDireccion) {
+		this.personaDireccion = personaDireccion;
 	}
 
 
-	public void setPersonasDireccion(String personasDireccion) {
-		this.personasDireccion = personasDireccion;
+	public String getPersonaEmail() {
+		return personaEmail;
 	}
 
 
-	public String getPersonasEmail() {
-		return personasEmail;
+	public void setPersonaEmail(String personaEmail) {
+		this.personaEmail = personaEmail;
 	}
 
 
-	public void setPersonasEmail(String personasEmail) {
-		this.personasEmail = personasEmail;
+	public String getPersonaNombre() {
+		return personaNombre;
 	}
 
 
-	public String getPersonasNombre() {
-		return personasNombre;
+	public void setPersonaNombre(String personaNombre) {
+		this.personaNombre = personaNombre;
 	}
 
 
-	public void setPersonasNombre(String personasNombre) {
-		this.personasNombre = personasNombre;
+	public String getPersonaTelefono() {
+		return personaTelefono;
 	}
 
 
-	public String getPersonasTelefono() {
-		return personasTelefono;
+	public void setPersonaTelefono(String personaTelefono) {
+		this.personaTelefono = personaTelefono;
 	}
 
 
-	public void setPersonasTelefono(String personasTelefono) {
-		this.personasTelefono = personasTelefono;
+	public int getPersonaTipo() {
+		return personaTipo;
 	}
 
 
-	public int getPersonasTipo() {
-		return personasTipo;
+	public void setPersonaTipo(int personaTipo) {
+		this.personaTipo = personaTipo;
 	}
 
 
-	public void setPersonasTipo(int personasTipo) {
-		this.personasTipo = personasTipo;
+	public String getPersonaFechaNacimiento() {
+		return personaFechaNacimiento;
+	}
+
+
+	public void setPersonaFechaNacimiento(String personaFechaNacimiento) {
+		this.personaFechaNacimiento = personaFechaNacimiento;
 	}
 
 	

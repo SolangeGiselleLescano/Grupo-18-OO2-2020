@@ -8,130 +8,161 @@ import javax.persistence.*;
 public class Persona  {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int personaId;
 	
-	@Column(name="personas_dni")
-	private int personasDni;
-
 	@Column(name="personas_apellido")
-	private String personasApellido;
+	private String personaApellido;
 
 	@Column(name="personas_direccion")
-	private String personasDireccion;
+	private String personaDireccion;
 
 	@Column(name="personas_email")
-	private String personasEmail;
+	private String personaEmail;
 
 	@Column(name="personas_nombre")
-	private String personasNombre;
+	private String personaNombre;
 
 	@Column(name="personas_telefono")
-	private String personasTelefono;
+	private String personaTelefono;
 
+	@Column(name="personas_fechaNacimiento")
+	private String personaFechaNacimiento;
+	
 	@Column(name="personas_tipo")
-	private int personasTipo;
+	private int personaTipo;
+	
+	
 
 	public Persona() {
 	}
 
 	
-	
-	
-	public Persona(int personaId, int personasDni, String personasApellido) {
+	public Persona(int personaId, String personaApellido, String personaNombre,String personaDireccion, String personaEmail,
+			 String personaTelefono, String personaFechaNacimiento, int personaTipo) {
 		super();
 		this.personaId = personaId;
-		this.personasDni = personasDni;
-		this.personasApellido = personasApellido;
+		this.personaApellido = personaApellido;
+		this.personaDireccion = personaDireccion;
+		this.personaEmail = personaEmail;
+		this.personaNombre = personaNombre;
+		this.personaTelefono = personaTelefono;
+		this.personaFechaNacimiento = personaFechaNacimiento;
+		this.personaTipo = personaTipo;
 	}
 
 
 
 
-	public Persona(int personaId, int personasDni, String personasApellido,String personasNombre, String personasDireccion,
-			String personasEmail,  String personasTelefono, int personasTipo) {
-		super();
-		this.personaId = personaId;
-		this.personasDni = personasDni;
-		this.personasApellido = personasApellido;
-		this.personasDireccion = personasDireccion;
-		this.personasEmail = personasEmail;
-		this.personasNombre = personasNombre;
-		this.personasTelefono = personasTelefono;
-		this.personasTipo = personasTipo;
-	}
-
-
-
-
-	public int getPersonasDni() {
-		return this.personasDni;
-	}
-	
-	
-
-	public int getPersona_id() {
+	public int getPersonaId() {
 		return personaId;
 	}
 
 
 
-	public void setPersona_id(int personaId) {
+
+	public void setPersonaId(int personaId) {
 		this.personaId = personaId;
 	}
 
 
 
-	public void setPersonasDni(int personasDni) {
-		this.personasDni = personasDni;
+
+	public String getPersonaApellido() {
+		return personaApellido;
 	}
 
-	public String getPersonasApellido() {
-		return this.personasApellido;
+
+
+
+	public void setPersonaApellido(String personaApellido) {
+		this.personaApellido = personaApellido;
 	}
 
-	public void setPersonasApellido(String personasApellido) {
-		this.personasApellido = personasApellido;
+
+
+
+	public String getPersonaDireccion() {
+		return personaDireccion;
 	}
 
-	public String getPersonasDireccion() {
-		return this.personasDireccion;
+
+
+
+	public void setPersonaDireccion(String personaDireccion) {
+		this.personaDireccion = personaDireccion;
 	}
 
-	public void setPersonasDireccion(String personasDireccion) {
-		this.personasDireccion = personasDireccion;
+
+
+
+	public String getPersonaEmail() {
+		return personaEmail;
 	}
 
-	public String getPersonasEmail() {
-		return this.personasEmail;
+
+
+
+	public void setPersonaEmail(String personaEmail) {
+		this.personaEmail = personaEmail;
 	}
 
-	public void setPersonasEmail(String personasEmail) {
-		this.personasEmail = personasEmail;
+
+
+
+	public String getPersonaNombre() {
+		return personaNombre;
 	}
 
-	public String getPersonasNombre() {
-		return this.personasNombre;
+
+
+
+	public void setPersonaNombre(String personaNombre) {
+		this.personaNombre = personaNombre;
 	}
 
-	public void setPersonasNombre(String personasNombre) {
-		this.personasNombre = personasNombre;
+
+
+
+	public String getPersonaTelefono() {
+		return personaTelefono;
 	}
 
-	public String getPersonasTelefono() {
-		return this.personasTelefono;
+
+
+
+	public void setPersonaTelefono(String personaTelefono) {
+		this.personaTelefono = personaTelefono;
 	}
 
-	public void setPersonasTelefono(String personasTelefono) {
-		this.personasTelefono = personasTelefono;
+
+
+
+	public int getPersonaTipo() {
+		return personaTipo;
 	}
 
-	public int getPersonasTipo() {
-		return this.personasTipo;
+
+
+
+	public void setPersonaTipo(int personaTipo) {
+		this.personaTipo = personaTipo;
 	}
 
-	public void setPersonasTipo(int personasTipo) {
-		this.personasTipo = personasTipo;
+
+
+
+	public String getPersonaFechaNacimiento() {
+		return personaFechaNacimiento;
 	}
 
+
+
+
+	public void setPersonaFechaNacimiento(String personaFechaNacimiento) {
+		this.personaFechaNacimiento = personaFechaNacimiento;
+	}
+
+
+	
+	
 }

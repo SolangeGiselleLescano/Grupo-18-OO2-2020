@@ -10,11 +10,27 @@ import com.unla.Grupo18.models.PersonaModel;
 public class PersonConverter {
 	
 	public PersonaModel entityToModel(Persona person) {
-		return new PersonaModel(person.getPersona_id(), person.getPersonasDni(),person.getPersonasApellido(),person.getPersonasNombre(),person.getPersonasDireccion(),person.getPersonasEmail(),person.getPersonasTelefono(),person.getPersonasTipo());
+		return new PersonaModel( 
+				 person.getPersonaId(),
+				 person.getPersonaApellido(),
+				 person.getPersonaNombre(),
+				 person.getPersonaDireccion(),
+				 person.getPersonaEmail(),
+				 person.getPersonaTelefono(),
+				 person.getPersonaFechaNacimiento(),
+				 person.getPersonaTipo());
 	}
 
 	public Persona modelToEntity(PersonaModel personModel) {
-		return new Persona(personModel.getPersonasId(), personModel.getPersonasDni(),personModel.getPersonasApellido(), personModel.getPersonasNombre(),personModel.getPersonasDireccion(),personModel.getPersonasEmail(),personModel.getPersonasTelefono(),personModel.getPersonasTipo());
+		return new Persona(
+				personModel.getPersonaId(),
+				personModel.getPersonaApellido(),
+				personModel.getPersonaNombre(),
+				personModel.getPersonaDireccion(),
+				personModel.getPersonaEmail(),
+				personModel.getPersonaTelefono(),
+				personModel.getPersonaFechaNacimiento(),
+				personModel.getPersonaTipo());
 	}
 	
 

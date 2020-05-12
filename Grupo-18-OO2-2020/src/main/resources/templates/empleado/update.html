@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<div class="p-3 mb-2 bg-secondary text-white"><head>
+		<meta charset="utf-8" />
+		<title>Update Empleado</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="/css/modern-business.css" rel="stylesheet" />
+	</head>
+<body>
+
+
+<form th:object="${empleado}" th:action="@{/empleado/update/} + ${empleado}" method="post">
+	<!-- <input type="hidden" th:field="*{empleadoModel.personaId}" /> -->
+	
+        <label for="lblDNI">DNI</label><br>
+        <input type="text" th:field="${empleado.personaId}"/> </br></br>
+		<label for="lblNombre">Nombre</label><br>
+		<input type="text" th:field="${empleado.personaNombre}"/> </br>
+		<label for="lblApellido">Apellido</label><br>
+		<input type="text" th:field="${empleado.personaApellido}"/></br> 
+		<label for="lblDireccion">Direccion</label><br>
+		<input type="text" th:field="${empleado.personaDireccion}"/> </br>
+		<label for="lblEmail">Email</label><br>
+		<input type="text" th:field="${empleado.personaEmail}"/></br> 
+		<label for="lblFechaIngreso">Fecha Nacimiento</label><br>
+		<input type="date" th:value="${empleado.personaFechaNacimiento}" th:field="${empleado.personaFechaNacimiento}"/> </br>
+		<label for="lblFechaIngreso">Fecha Ingreso</label><br>
+		<input type="date" th:value="${empleado.empleadoFechaIngreso}" th:field="${empleado.empleadoFechaIngreso}"/> </br>
+		<label for="lblSueldoBasico">Sueldo Basico</label><br>
+		<input type="text" th:field="${empleado.empleadoSueldoBasico}"/> </br>
+	    <label for="lblTipoEmpleado">Tipo Empleado</label><br>
+        <!-- <input type="text" th:field="${tipoEmpleado.teDescripcion}"/> </br>-->
+        <table>
+              <select th:field="${empleado.personaTipo}">
+                           <!-- <option th:value="${empleado.personaTipo}" th:text="${tipoEmpleado.teDescripcion}"></option>--> 
+                         <option th:each="tipo : ${tipoEmpleados}"
+                            th:value="${tipo.teId}"
+                            th:utext="${tipo.teDescripcion}"/>
+                  </select>
+ 	</table>
+	<input type="submit" value="Edit" />
+</form>
+
+</div>
+</body>
+<!-- Bootstrap core JavaScript -->
+	    <script src="/vendor/jquery/jquery.min.js"></script>
+	    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</html>

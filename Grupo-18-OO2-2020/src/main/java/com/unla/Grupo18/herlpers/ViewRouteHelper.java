@@ -32,6 +32,7 @@ public class ViewRouteHelper {
 		public final static String SUCURSAL_ROOT = "/sucursal";
 		public final static String SUCURSAL_INFO = "sucursal/infoSucursal";	
 		public final static String SUCURSAL_UPDATE = "sucursal/update";
+		public final static String SUCURSAL_DISTANCIA = "sucursal/distancia";
 		
 		//PERSON
 		public final static String PERSON_INDEX = "person/index";
@@ -39,4 +40,16 @@ public class ViewRouteHelper {
 		public final static String PERSON_UPDATE = "person/update";
 		public final static String PERSON_ROOT = "/person";
 
+		
+		//EMPLEADO
+		public final static String EMPLEADO_INDEX = "empleado/index";
+		public final static String EMPLEADO_NEW = "empleado/new";
+		public final static String EMPLEADO_UPDATE = "empleado/update";
+		public final static String EMPLEADO_ROOT = "/empleado";
+		
+		//cliente
+				public final static String CLIENTE_INDEX = "cliente/index";
+				public final static String CLIENTE_NEW = "cliente/new";
+				public final static String CLIENTE_UPDATE = "cliente/update";
+				public final static String CLIENTE_ROOT = "/cliente";
 }

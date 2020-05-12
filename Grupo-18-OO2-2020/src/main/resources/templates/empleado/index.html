@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<div class="p-3 mb-2 bg-secondary text-white">
+	<head>
+		<meta charset="utf-8" />
+		<title>UNLa</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="/css/modern-business.css" rel="stylesheet" />
+	</head>
+	<body>
+	
+	<table class="table table-dark">
+	<thead>
+		<tr>
+			<th scope="col">DNI</th>
+			<th scope="col">Nombre</th>
+			<th scope="col">Apellido</th>
+			<th scope="col">Direccion</th>
+			<th scope="col">Email</th>
+			<th scope="col">Fecha Nacimiento</th>
+			<th scope="col">Fecha Ingreso</th>
+			<th scope="col">Sueldo Basico</th>
+			<th scope="col">Tipo Empleado</th>
+			<th scope="col">Accion</th>
+
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="empleado : ${empleados}">
+		    <td><span th:text="${empleado.personaId}"/></td>
+			<td><span th:text="${empleado.personaNombre}" /></td>
+			<td><span th:text="${empleado.personaApellido}" /></td>
+	        <td><span th:text="${empleado.personaDireccion}"/></td>      
+			<td><span th:text="${empleado.personaEmail}" /></td>
+			<td><span th:text="${empleado.personaFechaNacimiento}" /></td>
+			<td><span th:text="${empleado.empleadoFechaIngreso}" /></td>
+			<td><span th:text="${empleado.empleadoSueldoBasico}" /></td>
+			<td><span th:text="${tipoEmpleados.get(empleado.personaTipo).getTeDescripcion()}"/></td>
+			<td>
+				<a th:href="@{/empleado/id/{id}(id=${empleado.personaId})}">Editar</a>
+				&nbsp;&nbsp;
+				<a th:href="@{/empleado/delete/{id}(id=${empleado.personaId})}">Eliminar</a>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<a href="/empleado/new">Crear nuevo cliente</a>
+</body>
+<!-- Bootstrap core JavaScript -->
+	    <script src="/vendor/jquery/jquery.min.js"></script>
+	    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	    </div>
+</html>

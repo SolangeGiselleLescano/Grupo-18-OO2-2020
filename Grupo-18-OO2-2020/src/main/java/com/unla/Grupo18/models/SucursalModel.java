@@ -1,6 +1,6 @@
 package com.unla.Grupo18.models;
 
-import java.math.BigDecimal;
+
 
 public class SucursalModel {
 
@@ -12,9 +12,9 @@ public class SucursalModel {
 	
 	private String mail;
 	
-	private BigDecimal latitud;
+	private double latitud;
 	
-	private BigDecimal longitud;
+	private double longitud;
 
 	
 	public SucursalModel() {
@@ -32,8 +32,8 @@ public class SucursalModel {
 	
 	
 
-	public SucursalModel(int idSucursal,  String direccion, String mail, BigDecimal latitud,
-			BigDecimal longitud, String telefono) {
+	public SucursalModel(int idSucursal,  String direccion, String mail, double latitud,
+			double longitud, String telefono) {
 		super();
 		this.idSucursal = idSucursal;
 		this.telefono = telefono;
@@ -45,7 +45,7 @@ public class SucursalModel {
 
 	
 	
-	public SucursalModel(String direccion, String mail, BigDecimal latitud, BigDecimal longitud,String telefono) {
+	public SucursalModel(String direccion, String mail, double latitud, double longitud,String telefono) {
 		super();
 		this.telefono = telefono;
 		this.direccion = direccion;
@@ -88,19 +88,19 @@ public class SucursalModel {
 		this.mail = mail;
 	}
 
-	public BigDecimal getLatitud() {
+	public double getLatitud() {
 		return latitud;
 	}
 
-	public void setLatitud(BigDecimal latitud) {
+	public void setLatitud(double latitud) {
 		this.latitud = latitud;
 	}
 
-	public BigDecimal getLongitud() {
+	public double getLongitud() {
 		return longitud;
 	}
 
-	public void setLongitud(BigDecimal longitud) {
+	public void setLongitud(double longitud) {
 		this.longitud = longitud;
 	}
 

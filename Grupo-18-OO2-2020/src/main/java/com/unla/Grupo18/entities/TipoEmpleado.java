@@ -16,8 +16,16 @@ public class TipoEmpleado  {
 	@Column(name="te_descripcion")
 	private String teDescripcion;
 
-	public TipoEmpleado() {
+	public TipoEmpleado(int teId, String teDescripcion) {
+		this.teId=teId;
+		this.teDescripcion=teDescripcion;
 	}
+	
+	
+	public TipoEmpleado() {
+
+	}
+
 
 	public int getTeId() {
 		return this.teId;

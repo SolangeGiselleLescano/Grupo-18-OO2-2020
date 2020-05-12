@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<div class="p-3 mb-2 bg-secondary text-white"><head>
+		<meta charset="utf-8" />
+		<title>Alta Cliente</title>
+		<!-- Bootstrap core CSS -->
+		<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="/css/modern-business.css" rel="stylesheet" />
+	</head>
+<body>
+
+	<form th:object="${empleado}" th:action="@{/cliente/update/} + ${cliente}" method="post">
+	<!-- <input type="hidden" th:field="*{clienteModel.personaId}" /> -->
+	
+        <label for="lblDNI">DNI</label><br>
+        <input type="text" th:field="${cliente.personaId}"/> </br></br>
+		<label for="lblNombre">Nombre</label><br>
+		<input type="text" th:field="${cliente.personaNombre}"/> </br>
+		<label for="lblApellido">Apellido</label><br>
+		<input type="text" th:field="${cliente.personaApellido}"/></br> 
+		<label for="lblDireccion">Direccion</label><br>
+		<input type="text" th:field="${cliente.personaDireccion}"/> </br>
+		<label for="lblEmail">Email</label><br>
+		<input type="text" th:field="${cliente.personaEmail}"/></br> 
+		<label for="lblFechaIngreso">Fecha Nacimiento</label><br>
+		<input type="date" th:value="${cliente.personaFechaNacimiento}" th:field="${cliente.personaFechaNacimiento}"/> </br>
+	    
+ 	</p>
+ 	
+ 	</div>
+ 	</div>
+ 	<input type="submit" value="Edit" />
+</form>
+
+</div>
+</body>
+<!-- Bootstrap core JavaScript -->
+	    <script src="/vendor/jquery/jquery.min.js"></script>
+	    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</html>

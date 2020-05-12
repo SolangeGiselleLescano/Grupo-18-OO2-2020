@@ -1,7 +1,7 @@
 package com.unla.Grupo18.entities;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
+
 
 
 
@@ -24,10 +24,10 @@ public class Sucursal  {
 	private int sucursalesEmpleadoId;
 
 	@Column(name="sucursales_latitud")
-	private BigDecimal sucursalesLatitud;
+	private double sucursalesLatitud;
 
 	@Column(name="sucursales_longitud")
-	private BigDecimal sucursalesLongitud;
+	private double sucursalesLongitud;
 
 	@Column(name="sucursales_telefono")
 	private String sucursalesTelefono;
@@ -53,7 +53,7 @@ public class Sucursal  {
 
 
 	public Sucursal(int sucursalesId, String sucursalesDireccion, String sucursalesEmail, 
-			BigDecimal sucursalesLatitud, BigDecimal sucursalesLongitud, String sucursalesTelefono) {
+			double sucursalesLatitud, double sucursalesLongitud, String sucursalesTelefono) {
 		super();
 		this.sucursalesId = sucursalesId;
 		this.sucursalesDireccion = sucursalesDireccion;
@@ -66,7 +66,7 @@ public class Sucursal  {
 
 
 	public Sucursal(String sucursalesDireccion, String sucursalesEmail,
-			BigDecimal sucursalesLatitud, BigDecimal sucursalesLongitud, String sucursalesTelefono) {
+			double sucursalesLatitud, double sucursalesLongitud, String sucursalesTelefono) {
 		super();
 		this.sucursalesDireccion = sucursalesDireccion;
 		this.sucursalesEmail = sucursalesEmail;
@@ -110,19 +110,19 @@ public class Sucursal  {
 		this.sucursalesEmpleadoId = sucursalesEmpleadoId;
 	}
 
-	public BigDecimal getSucursalesLatitud() {
+	public double getSucursalesLatitud() {
 		return this.sucursalesLatitud;
 	}
 
-	public void setSucursalesLatitud(BigDecimal sucursalesLatitud) {
+	public void setSucursalesLatitud(double sucursalesLatitud) {
 		this.sucursalesLatitud = sucursalesLatitud;
 	}
 
-	public BigDecimal getSucursalesLongitud() {
+	public double getSucursalesLongitud() {
 		return this.sucursalesLongitud;
 	}
 
-	public void setSucursalesLongitud(BigDecimal sucursalesLongitud) {
+	public void setSucursalesLongitud(double sucursalesLongitud) {
 		this.sucursalesLongitud = sucursalesLongitud;
 	}
 

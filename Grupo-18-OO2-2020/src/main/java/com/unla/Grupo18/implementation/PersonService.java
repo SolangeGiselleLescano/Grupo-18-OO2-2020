@@ -50,12 +50,12 @@ public class PersonService implements IPersonService {
 
 	@Override
 	public PersonaModel findBypersonaId(int id) {
-		return personConverter.entityToModel(personRepository.findBypersonaId(id));
+		return personConverter.entityToModel(personRepository.findByPersonaId(id));
 	}
 
 	@Override
 	public PersonaModel findBypersonasNombre(String name) {
-		return personConverter.entityToModel(personRepository.findBypersonasNombre(name));
+		return personConverter.entityToModel(personRepository.findByPersonaNombre(name));
 	}
 	/*
 	@Override
